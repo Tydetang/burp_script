@@ -1,2 +1,7 @@
 # burp_script
 burp的python脚本插件
+
+第一种简单地说下思路，就是通过burp爬到的页面来判断提交方法，然后得到参数修改进行时间盲注的方法，再一次请求页面来判断是否存在注入。
+主要是运用了IContextMenuFactory模板，其实在写的时候用的是jython导致很多实现不了，比如其中使用了java的java.net.url库来得到请求的某些信息.
+
+第2种是用了burp的IIntruderPayloadGenerator来进行的，即使用了intruder功能，就是自己选择参数然后进行修改，再发包，与爆破功能相似.
